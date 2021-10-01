@@ -9,12 +9,17 @@ export class Book extends Component {
             <div>
                 <Card>
                     <Card.Body>
-                        <Card.Title>Book name: {this.props.title}</Card.Title>
+                        <Card.Title>Book's name: {this.props.title}</Card.Title>
                         <Card.Text>
-                            Book description: {this.props.description}
+                            Book's description: {this.props.description}
                             <br></br>
                             user's Email: {this.props.email}
+                            <br></br>
+                            book id: {this.props.id}
                         </Card.Text>
+                        <Card.Footer>
+                            <Button onClick={() => {this.props.deleteBook(this.props.id)}}>Delete book</Button>
+                        </Card.Footer>
                     </Card.Body>
                 </Card>
             </div>
