@@ -16,7 +16,8 @@ class MyFavoriteBooks extends React.Component {
       this.state = {
         bookData: [],
         email: this.props.auth0.user.email,
-        showModal: false
+        showModal: false,
+        showUpdateModal: false
       }
     }
 
@@ -67,6 +68,10 @@ class MyFavoriteBooks extends React.Component {
       
       console.log('book ids in data for book', this.state.bookData)
     }
+    
+    updateBook = async(bookId) => {
+       
+    }
 
   render() {
     return(
@@ -89,7 +94,19 @@ class MyFavoriteBooks extends React.Component {
         {this.state.bookData.map((element,index) => {
           return (
             <div>
-            <Book key={index} deleteBook={this.deleteBook} id={element._id} title={element.title} description={element.description} email={element.email} />
+            <Book key={index} deleteBook={this.deleteBook} updateBook = {this.updateBook} id={element._id} title={element.title} description={element.description} email={element.email} />
+            </div>
+          )
+        })}
+        </>
+      }
+
+      {this.state.bookData &&
+        <>
+        {this.state.bookData.map((element,index) => {
+          return (
+            <div>
+            <Book key={index} deleteBook={this.deleteBook} updateBook = {this.updateBook} id={element._id} title={element.title} description={element.description} email={element.email} />
             </div>
           )
         })}

@@ -1,5 +1,4 @@
-import React  from 'react';
-import { Component } from 'react';
+import React, { Component } from 'react'
 import {Card, Button} from 'react-bootstrap/';
 
 
@@ -19,6 +18,9 @@ export class Book extends Component {
                         </Card.Text>
                         <Card.Footer>
                             <Button onClick={() => {this.props.deleteBook(this.props.id)}}>Delete book</Button>
+                            <br></br>
+                            <br></br>
+                            <Button onClick={() => {this.props.updateBook(this.props.id)}}>Update book</Button>
                         </Card.Footer>
                     </Card.Body>
                 </Card>
